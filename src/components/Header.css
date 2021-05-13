@@ -1,0 +1,17 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    box-shadow: 4px 1px 4px  #ddd;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.headerIcon{
+    color: #356afa;
+}
+
+.headerlogo{
+    object-fit: contain;
+    height: 40px;
+}
