@@ -1,5 +1,5 @@
 import React from 'react'
-import "../components/Footer.css"
+import "../../components/HomePage/Footer.css"
 import IconButton from '@material-ui/core/IconButton'
 import Relay from "@material-ui/icons/Replay"
 import Close from "@material-ui/icons/Close"

@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import '../components/Cards.css'
+import '../../components/HomePage/Cards.css'
 import CardView from 'react-tinder-card';
 
 function Cards() {

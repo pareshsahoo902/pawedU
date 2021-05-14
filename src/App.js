@@ -1,14 +1,15 @@
-import Header from "./components/Header"
-import PawedCards from "./components/PawedCards"
-import Footer from "./components/Footer"
+import { BrowserRouter, Route } from "react-router-dom";
+import Register from "./components/register/Register";
+import Login from "./components/login/Login";
+import HomePage from "./components/HomePage/HomePage";
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <PawedCards />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Route exact path="/" component={Login} />
+      <Route exact path="/homepage" component={HomePage} />
+      <Route exact path="/register" component={Register} />
+    </BrowserRouter>
   );
 }
 

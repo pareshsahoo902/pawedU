@@ -1,6 +1,6 @@
 import React from 'react'
-import "../components/Header.css"
-import Logo from '../assets/pawed_logo.png'
+import "../../components/HomePage/Header.css"
+import Logo from '../../assets/pawed_logo.png'
 import ProfileIcon from '@material-ui/icons/AccountCircleRounded';
 import IconButton from '@material-ui/core/IconButton'
 import ChatIcon from '@material-ui/icons/ForumRounded';
