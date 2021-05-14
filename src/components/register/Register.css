@@ -11,10 +11,10 @@
 }
 
 .dogimg{
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
-   
+
 
 }
 
@@ -100,6 +100,11 @@ a:hover{
 
 .input-div:focus-within .i {
     color: #488ece;
+}
+
+.input-div:focus-within{
+    border-bottom: 2px solid #488ece;
+
 }
 
 .input-div:focus-within:after, .input-div:focus-within::before{

@@ -3,6 +3,7 @@ import '../../components/login/Login.css'
 import {Link} from 'react-router-dom';
 import Dogavtar from "../../assets/dog_avtar.png";
 import dogimage from "../../assets/newdog.svg";
+import AppLogo from "../../assets/app_logo.png";
 import UserIcon from "@material-ui/icons/AccountCircleRounded";
 import PasswordIcon from "@material-ui/icons/Security";
 
@@ -12,13 +13,14 @@ function Login() {
   return (
     <div className="container">
         <div class="dogimg">
+          <img src={AppLogo} />
           <img src={dogimage} />
         </div>
 
         <div className="login">
           <form>
               <img src={Dogavtar} className="avtar" />
-            <h2>Welcome</h2>
+            <h2>You Dog!</h2>
             <br/>
             <div className="input-div one ">
               <div className="i">

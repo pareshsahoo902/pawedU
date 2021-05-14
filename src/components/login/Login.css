@@ -11,11 +11,9 @@
 }
 
 .dogimg{
-    display: flex;
+    display:grid;
     justify-content: center;
-    align-items: center;
-   
-
+    align-content: center;
 }
 
 .login{
@@ -96,6 +94,11 @@ a:hover{
 .input-div > div{
     position: relative;
     height: 45px;
+}
+
+.input-div:focus-within{
+    border-bottom: 2px solid #488ece;
+
 }
 
 .input-div:focus-within .i {

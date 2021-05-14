@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import '../../components/register/Register.css'
 import Dogavtar from "../../assets/dog_avtar.png";
 import dogimage from "../../assets/dogdate.png";
+import AppLogo from "../../assets/app_logo.png";
 import UsernameIcon from '@material-ui/icons/Pets';
 import NameIcon from '@material-ui/icons/AccountCircle';
 import PasswordIcon from "@material-ui/icons/Security";
@@ -13,6 +14,7 @@ function Register() {
     return (
         <div className="container">
             <div class="dogimg">
+          <img src={AppLogo} />
           <img src={dogimage} />
         </div>
 
