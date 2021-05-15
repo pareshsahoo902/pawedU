@@ -15,8 +15,18 @@
     justify-content: center;
     align-items: center;
 
-
 }
+
+.p{
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 550;
+    color: #555;
+}
+
+.file_input {
+    display: none;
+  }
 
 .login{
     display: flex;

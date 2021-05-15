@@ -20,7 +20,7 @@ function Login() {
         <div className="login">
           <form>
               <img src={Dogavtar} className="avtar" />
-            <h2>You Dog!</h2>
+            <h2>You Dawg!</h2>
             <br/>
             <div className="input-div one ">
               <div className="i">
@@ -28,7 +28,7 @@ function Login() {
               </div>
               <div>
                   <h5>Username</h5>
-                  <input class="input" type="text" />
+                  <input class="input" placeholder="Enter a Username" type="text"  />
               </div>
             </div>
 
@@ -38,7 +38,7 @@ function Login() {
               </div>
               <div>
                   <h5>Password</h5>
-                  <input class="input" type="password" />
+                  <input class="input" type="password" placeholder="Enter Password"/>
               </div>
             </div>
 
