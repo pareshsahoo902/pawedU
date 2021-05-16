@@ -71,7 +71,7 @@ function Register() {
   const registerUser =(url)=>{
 
 
-  api.post('http://localhost:8001/api/register',{
+  api.post('/api/register',{
     username:username,
     name:name,
     password:password,

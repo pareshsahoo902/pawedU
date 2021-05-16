@@ -1,25 +1,39 @@
-import React,{useState} from 'react'
+import React,{useState , useEffect} from 'react'
 import '../../components/HomePage/Cards.css'
+import {Redirect} from 'react-router-dom';
+import api from '../../config/api'
 import CardView from 'react-tinder-card';
 
 function Cards() {
 
-    const number = [1,2,43,54,4,6,5,0]
-    const [dogs, setDogs] = useState([  
-    {
-        name:"Missy",
-        url:"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg"
-    },
-    {
-        name:"Boxy",
-        url:"https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg"
-    },
-    {
-        name:"Sophie",
-        url:"https://thehappypuppysite.com/wp-content/uploads/2019/09/Fluffy-Dogs-HP-long.jpg"
-    
-    }]);
+    useEffect(()=>{
+        
+        if(localStorage.getItem('myAuth')!=null){
+        var token = JSON.parse(localStorage.getItem('myAuth')).token
 
+        let config = {
+            headers: {
+              'Authorization': 'Bearer ' + token
+            }
+          }
+
+        api.get('/api/getUsers',config)
+        .then(res =>{
+            setDogs(res.data)
+        })
+
+    }else{
+        setredirect(<Redirect to={'/'}/>)
+    }
+    }
+     ,[])
+ 
+   
+
+    const [dogs, setDogs] = useState([]);
+    const [redirect, setredirect] = useState();
+
+   
     const swiped = (direction , dogName)=>{
         console.log("remove"+dogName)
     }
@@ -42,7 +56,7 @@ function Cards() {
                         onSwipe={(dir)=> swiped(dir, character.name )}
                         onCardLeftScreen = {()=>outOfFrame(character.name)}
                         >
-                            <div style={{backgroundImage: `url(${character.url})`}}
+                            <div style={{backgroundImage: `url(${character.imageUrl})`}}
                             className="card">
                                 <h3>{character.name}</h3>
                             </div>
@@ -56,6 +70,7 @@ function Cards() {
 
 
             </div>
+            {redirect}
             
         </div>
     )
