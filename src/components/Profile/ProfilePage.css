@@ -1,0 +1,100 @@
+
+.profile{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin:0;
+    padding: 0;
+}
+
+.profile__showcase{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 30% 70%;
+}
+.profile_header{
+    background-image: linear-gradient(to left, #74c2c9, #488ece, #124ed6);
+    align-items: center;
+    justify-content: center;
+}
+
+.details__dog{
+    margin-left: 18px;
+    justify-content: space-evenly;
+    
+}
+
+.details__dog em{
+    color: white;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.details__dog h3{
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.details__dog h5{
+    color: white;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.detailed{
+    display: flex;
+    margin: 1rem;
+    padding: 1rem;
+    align-items: center;
+
+}
+
+.bio{
+    margin-left: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    color: white;
+}
+.dp__avatar{
+    width: 130px;
+    height: 130px;
+    background-color: white;
+    box-shadow: 2px;
+    border-radius: 50%;
+}
+
+.grid_image{
+    width: 100%;
+}
+
+.photo__grids{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.add_button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.75rem 2rem;
+    outline: none;
+    margin-top: -10px;
+    border: none;
+    background-color: #1414b1;
+    color: white;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+.form__Profile{
+    padding: 1rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
