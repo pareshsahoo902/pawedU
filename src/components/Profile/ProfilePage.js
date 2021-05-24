@@ -1,6 +1,7 @@
 import {Link}  from 'react-router-dom'
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import "./ProfilePage.css";
+import api from '../../config/api'
 import Dogavtar from "../../assets/dog_avtar.png";
 import Header from "../../components/HomePage/Header";
 import UsernameIcon from "@material-ui/icons/WcOutlined";
@@ -11,11 +12,35 @@ import AddImage from "@material-ui/icons/AddAPhoto";
 
 function ProfilePage() {
   const [name, setName] = useState();
+  const [username, setUserName] = useState();
   const [gender, setGender] = useState();
-  const [password, setPassword] = useState();
+  const [age, setAge] = useState();
   const [breed, setBreed] = useState();
   const [file, setImage] = useState();
+  const [url, setUrl] = useState();
   const [redirect, setRedirect] = useState();
+
+
+  useEffect(()=>{
+    if(localStorage.getItem('myAuth')!=null){
+      var token = JSON.parse(localStorage.getItem('myAuth')).token
+      var id = JSON.parse(localStorage.getItem('myAuth')).id
+
+      let config = {
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      }
+
+      api.get('api/getUsers/'+id,config)
+      .then(res =>{
+        setName(res.data.name)
+        setBreed(res.data.breed)
+        setUserName("@"+res.data.username)
+        setUrl(res.data.imageUrl)
+      })
+    }
+  },[])
 
   return (
     <div>
@@ -24,11 +49,11 @@ function ProfilePage() {
         <div className="profile__showcase">
           <div className="profile_header">
             <div className="detailed">
-              <img src={Dogavtar} className="dp__avatar" />
+              <img  src={url ? url : Dogavtar} className="dp__avatar" />
               <div className="details__dog">
-                <em className="usernameText">username</em>
-                <h3 className="dog__Name">Bruno</h3>
-                <h5 className="breed__name">Pomerian,23</h5>
+                <em className="usernameText">{username}</em>
+                <h3 className="dog__Name">{name}</h3>
+                <h5 className="breed__name">{breed},{age}</h5>
               </div>
             </div>
             <p className="bio"></p>
@@ -81,6 +106,7 @@ function ProfilePage() {
                 <input
                   class="input"
                   type="text"
+                  value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Your Name"
                 />
@@ -96,7 +122,7 @@ function ProfilePage() {
                 <input
                   class="input"
                   type="number"
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => setAge(e.target.value)}
                   placeholder="Enter your Age"
                 />
               </div>
@@ -111,6 +137,7 @@ function ProfilePage() {
                 <input
                   class="input"
                   type="text"
+                  value={breed}
                   onChange={(e) => setBreed(e.target.value)}
                   placeholder="Enter your Breed"
                 />
